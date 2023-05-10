@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: 150px;">
+
+    <div class="col-lg-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Liste des Messages</h5>
+
+                <!-- Table with stripped rows -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>     <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Sujet</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Suppression</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for contact in c %}
+                        <tr>
+                            <td>{{ contact.Nom }}</td>
+                            <td>{{ contact.Prenom }}</td>
+                            <td>{{ contact.Sujet }}</td>
+                            <td>{{ contact.Email }}</td>
+                            <td>{{ contact.Message }}</td>
+                            <td>
+                                <a class="btn btn-secondary" href="{{ path('supp_contact',{'id':contact.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <!-- End small tables -->
+                <a href="{{ path('display_admin') }}"><i class="" style="font-size: 50px;"></i>Panneau d'administration</a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}

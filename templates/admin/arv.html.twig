@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: 150px;">
+
+    <div class="col-lg-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Liste des Rendez-vous</h5>
+                <a href="{{ path('app_rendezvous') }}"><i class="ri-arrow-left-circle-fill" style="font-size: 50px;"></i></a>
+
+                <!-- Table with stripped rows -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr><th>REF</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Numéro</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Message</th>
+                        <th>Suppression</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rendezvous in r %}
+                        <tr>
+                            <td>{{ rendezvous.Id }}</td>
+                            <td>{{ rendezvous.Nom }}</td>
+                            <td>{{ rendezvous.Prenom }}</td>
+                            <td>{{ rendezvous.Tel }}</td>
+                            <td>{{ rendezvous.Email }}</td>
+                            <td>{{ rendezvous.Date|date('d-m-Y') }}</td>
+                            <td>{{ rendezvous.Message }}</td>
+                            <td>
+                                <a class="btn btn-secondary" href="{{ path('supp_rv',{'id':rendezvous.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                    
+                </table>
+                <!-- End small tables -->
+                <a href="{{ path('display_admin') }}"><i class="" style="font-size: 50px;"></i>Panneau d'administration</a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}

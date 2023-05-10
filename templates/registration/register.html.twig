@@ -1,0 +1,23 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+ <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+            <br><br><br>
+        <div class="section-title">
+          <h2>Panneau d'administration</h2>
+          <p>Inscription d'un nouveau utilisateur</p>
+        </div>
+{{form(form)}}
+
+      </div>
+    </section><!-- End Appointment Section -->
+{% endblock %}

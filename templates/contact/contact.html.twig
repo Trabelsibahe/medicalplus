@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact!{% endblock %}
+
+{% block body %}
+<!-- ======= Contact Section ======= -->
+<body>
+      <div class="container">
+      <br><br>
+
+     <section id="contact" class="contact">
+      <div class="container">
+      <div class="row mt-5">
+      <div class="section-title">
+          <h2>Contact</h2>
+        </div></div>
+        
+                                {{ form_start(form,{attr:{novalidate:'novalidate', class:'php-email-form'}}) }}
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                                    {{ form_widget(form.Nom,{'attr':{'class':'form-control','placeholder':'Nom'}}) }}
+                                    {{ form_errors(form.Nom,{'attr':{'class':'text-danger'}})}}
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    {{ form_widget(form.Prenom,{'attr':{'class':'form-control','placeholder':'Prenom'}}) }}
+                                    {{ form_errors(form.Prenom,{'attr':{'class':'text-danger'}})}}
+
+                </div>
+              </div>
+  <div class="row">
+                <div class="col-md-6 form-group mt-3">
+                                    {{ form_widget(form.Sujet,{'attr':{'class':'form-control','placeholder':'Sujet'}}) }}
+                                    {{ form_errors(form.Sujet,{'attr':{'class':'text-danger'}})}}
+
+                </div>
+                <div class="col-md-6 form-group mt-3">
+                                    {{ form_widget(form.Email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+                                    {{ form_errors(form.Email,{'attr':{'class':'text-danger'}})}}
+
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                                    {{ form_widget(form.Message,{'attr':{'class':'form-control','placeholder':'Message',}}) }}
+                                    {{ form_errors(form.Message,{'attr':{'class':'text-danger'}})}}
+
+              </div>
+                            <div class="my-3">
+
+              <div class="text-center"><button type="submit">Send Message</button></div>
+
+              {{ form_end(form)}}
+          </div>
+
+        </div>
+
+
+      </div>
+    </section><!-- End Contact Section -->
+</body>
+
+{% endblock %}

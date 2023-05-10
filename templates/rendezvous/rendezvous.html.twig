@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RendezVous {% endblock %}
+
+{% block body %}
+
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+<br><br><br>
+        <div class="section-title">
+          <h2>Rendez-Vous</h2>
+          <p>Fixer un rendez vous.</p>
+        </div>
+        {{ form_start(form,{attr:{novalidate:'novalidate', class:'php-email-form'}}) }}
+          <div class="row">
+            <div class="col-md-4 form-group">
+            {{ form_widget(form.Nom,{'attr':{'class':'form-control','placeholder':'Nom'}}) }}
+            {{ form_errors(form.Nom,{'attr':{'class':'text-danger'}})}}
+             <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            {{ form_widget(form.Prenom,{'attr':{'class':'form-control','placeholder':'Prenom'}}) }}
+            {{ form_errors(form.Prenom,{'attr':{'class':'text-danger'}})}}              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            {{ form_widget(form.Email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+            {{ form_errors(form.Email,{'attr':{'class':'text-danger'}})}}              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+            {{ form_widget(form.tel,{'attr':{'class':'form-control','placeholder':'Numéro de Teléphone'}}) }}
+            {{ form_errors(form.tel,{'attr':{'class':'text-danger'}})}}              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              {{ form_widget(form.spec,{'attr':{'class':'form-control','placeholder':'Spécialités'}}) }}
+              {{ form_errors(form.spec,{'attr':{'class':'text-danger'}})}}    
+              <div class="col-md-4 form-group mt-3">
+
+              <div class="validate"></div>
+            </div>
+              <div class="validate"></div>
+            </div>
+              <div class="col-md-4 form-group mt-3">
+              {{ form_widget(form.Date,{'attr':{'class':'form-control','placeholder':'Date'}}) }}
+              {{ form_errors(form.Date,{'attr':{'class':'text-danger'}})}}              <div class="validate"></div>
+              
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+          {{ form_widget(form.message,{'attr':{'class':'form-control','placeholder':'Message(Optionnel)'}}) }}
+          {{ form_errors(form.message,{'attr':{'class':'text-danger'}})}}            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+              {{ form_end(form)}}
+
+      </div>
+    </section><!-- End Appointment Section -->
+{% endblock %}
